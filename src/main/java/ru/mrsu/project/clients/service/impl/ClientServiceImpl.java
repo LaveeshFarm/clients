@@ -18,48 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ClientServiceImpl implements ClientService {
-    private final ResourceLoader resourceLoader;
     private final ClientRepository clientRepository;
-    public ClientServiceImpl(ResourceLoader resourceLoader, ClientRepository clientRepository) {
-        this.resourceLoader = resourceLoader;
+    public ClientServiceImpl(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
     }
     @Override
     public List<Client> getClients() {
-        XMLInputFactory factory = XMLInputFactory.newInstance();
-        XMLStreamReader parser = null;
-        try {
-            Resource resource = resourceLoader.getResource("classpath:client.xml");
-            InputStream inputStream = resource.getInputStream();
-            parser = factory.createXMLStreamReader(inputStream);
-        } catch (FileNotFoundException e) {
-            System.out.println("Check file path");
-        } catch (XMLStreamException e) {
-            System.out.println(e.getMessage());
-        } catch(IOException e) {
-            System.out.println(e.getMessage());
-        }
-        List<Client> clients = new ArrayList<>();
-        try {
-            while (true) {
-                assert parser != null;
-                if (!parser.hasNext()) break;
-                int event = parser.next();
-                if (event == XMLStreamConstants.START_ELEMENT) {
-                    if (parser.getLocalName().equals("client")) {
-                        clients.add(new Client(
-                                Integer.parseInt(parser.getAttributeValue(0)),
-                                parser.getAttributeValue(1),
-                                parser.getAttributeValue(2),
-                                Integer.parseInt(parser.getAttributeValue(3))
-                        ));
-                    }
-                }
-            }
-        } catch (XMLStreamException e) {
-            System.out.println(e.getMessage());
-        }
-        return clients;
+        return clientRepository.findAll();
     }
 
     @Override

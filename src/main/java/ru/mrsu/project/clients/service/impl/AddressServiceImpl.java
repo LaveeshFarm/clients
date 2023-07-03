@@ -11,10 +11,8 @@ import ru.mrsu.project.clients.service.AddressService;
 import java.util.List;
 @Service
 public class AddressServiceImpl implements AddressService {
-    private final ResourceLoader resourceLoader;
     private final AddressRepository addressRepository;
-    public AddressServiceImpl(ResourceLoader resourceLoader, AddressRepository addressRepository) {
-        this.resourceLoader = resourceLoader;
+    public AddressServiceImpl(AddressRepository addressRepository) {
         this.addressRepository = addressRepository;
     }
     @Override
