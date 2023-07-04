@@ -1,11 +1,11 @@
-package ru.mrsu.project.clients.parseDara.parseDataImpl;
+package ru.mrsu.project.clients.parseData.parseDataImpl;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import ru.mrsu.project.clients.parseDara.parseData;
+import ru.mrsu.project.clients.parseData.parseData;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashMap;
 import java.util.List;
 
@@ -46,6 +46,13 @@ public class Address implements parseData {
         this.flatNumber = flatNumber;
     }
 
+    public Address(String city, String street, Integer house, Integer floor, Integer flatNumber) {
+        this.city = city;
+        this.street = street;
+        this.house = house;
+        this.floor = floor;
+        this.flatNumber = flatNumber;
+    }
     @Override
     public String toString() {
         return "ID: " + id + " City: " + city + " House: " + house + " Floor: " + floor + " Flat number: " + flatNumber;

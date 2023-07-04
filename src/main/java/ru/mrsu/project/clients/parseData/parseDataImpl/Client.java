@@ -1,11 +1,11 @@
-package ru.mrsu.project.clients.parseDara.parseDataImpl;
+package ru.mrsu.project.clients.parseData.parseDataImpl;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.mrsu.project.clients.parseDara.parseData;
+import ru.mrsu.project.clients.parseData.parseData;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashMap;
 
 @Data

@@ -1,11 +1,9 @@
 package ru.mrsu.project.clients.service.impl;
 
 
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
-import ru.mrsu.project.clients.jpa.AddressRepository;
-import ru.mrsu.project.clients.parseDara.parseDataImpl.Address;
-import ru.mrsu.project.clients.parseDara.parseDataImpl.Client;
+import ru.mrsu.project.clients.repository.AddressRepository;
+import ru.mrsu.project.clients.parseData.parseDataImpl.Address;
 import ru.mrsu.project.clients.service.AddressService;
 
 import java.util.List;
@@ -18,6 +16,11 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public List<Address> getAddress() {
         return addressRepository.findAll();
+    }
+
+    @Override
+    public Address getOneAddress(Integer id) {
+        return addressRepository.findAddressById(id);
     }
 
     @Override

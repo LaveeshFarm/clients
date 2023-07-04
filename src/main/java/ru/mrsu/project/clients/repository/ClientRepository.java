@@ -1,7 +1,7 @@
-package ru.mrsu.project.clients.jpa;
+package ru.mrsu.project.clients.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.mrsu.project.clients.parseDara.parseDataImpl.Client;
+import ru.mrsu.project.clients.parseData.parseDataImpl.Client;
 
 import java.util.List;
 

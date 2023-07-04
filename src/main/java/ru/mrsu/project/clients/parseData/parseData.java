@@ -1,4 +1,4 @@
-package ru.mrsu.project.clients.parseDara;
+package ru.mrsu.project.clients.parseData;
 
 import java.util.HashMap;
 

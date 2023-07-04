@@ -2,7 +2,7 @@ package ru.mrsu.project.clients.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.mrsu.project.clients.parseDara.parseDataImpl.Client;
+import ru.mrsu.project.clients.parseData.parseDataImpl.Client;
 import ru.mrsu.project.clients.service.ClientService;
 
 import java.util.List;

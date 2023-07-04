@@ -2,9 +2,10 @@ package ru.mrsu.project.clients.controllers;
 
 import lombok.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import ru.mrsu.project.clients.parseDara.parseDataImpl.Address;
-import ru.mrsu.project.clients.parseDara.parseDataImpl.Client;
+import ru.mrsu.project.clients.parseData.parseDataImpl.Address;
+import ru.mrsu.project.clients.parseData.parseDataImpl.Client;
 import ru.mrsu.project.clients.service.AddressService;
 import ru.mrsu.project.clients.service.ClientService;
 
@@ -24,6 +25,11 @@ public class AddressController {
     @GetMapping("/internal/addresses")
     public List<Address> getAddress() {
         return addressService.getAddress();
+    }
+
+    @GetMapping("/internal/address/{id}")
+    public Address getOneAddress(@PathVariable("id") Integer id) {
+        return addressService.getOneAddress(id);
     }
 
     @GetMapping("/add/addresses")
