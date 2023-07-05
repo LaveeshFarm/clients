@@ -14,3 +14,13 @@ spring:
     properties:
       hibernate:
         default_schema: clients_data
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+  hystrix:
+    enabled: true
