@@ -1,10 +1,10 @@
-package ru.mrsu.project.clients.controllers.services;
+package ru.mrsu.project.clients.client.clientService.api;
 
 import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 @Component
-public class ClientControllerServiceFallBack implements ClientControllerServiceFeignClient {
+public class ClientApiFallBack implements ClientApi {
     @Override
     public HashMap<String, Object> getClientService() {
         HashMap<String, Object> hm = new HashMap<>();
